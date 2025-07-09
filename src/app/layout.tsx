@@ -13,8 +13,6 @@ const rethinkSans = Rethink_Sans({
 
 export const metadata: Metadata = {
   title: 'Yura Goryakin',
-  description:
-    'A page with scroll-snapping sections, a fixed header, and a static sidebar.',
 };
 
 export default function RootLayout({
