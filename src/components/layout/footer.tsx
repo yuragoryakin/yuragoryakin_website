@@ -35,7 +35,7 @@ const Footer = ({ isMobile }: FooterProps) => {
             me
           </a>
         </p>
-        <p>Illustrated by my wife</p>
+        <p>Illustrated by my wife Julia Plyasunova</p>
         <p>&copy; 2025</p>
       </div>
     </footer>

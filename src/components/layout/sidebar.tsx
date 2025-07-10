@@ -4,24 +4,25 @@ import type { ComponentProps } from 'react';
 import { cn } from '@/lib/utils';
 import { Separator } from '../ui/separator';
 import { ThemeToggle } from '../theme-toggle';
+import { motion, AnimatePresence } from 'framer-motion';
 
 type SidebarProps = ComponentProps<'aside'> & {
   onLinkClick: (sectionId: number, closeSheet?: () => void) => void;
   isMobileView?: boolean;
   activeSection: number;
   closeSheet?: () => void;
+  sections: { id: number; name: string }[];
 };
 
-export default function Sidebar({ className, onLinkClick, isMobileView = false, activeSection, closeSheet, ...props }: SidebarProps) {
-  const sections = [
-    { id: 1, name: 'Intro' },
-    { id: 2, name: 'Experience' },
-    { id: 3, name: 'Education' },
-    { id: 4, name: 'Skills' },
-    { id: 5, name: 'About' },
-    { id: 6, name: 'Contact' },
-  ];
-  
+export default function Sidebar({
+  className,
+  onLinkClick,
+  isMobileView = false,
+  activeSection,
+  closeSheet,
+  sections,
+  ...props
+}: SidebarProps) {
   const handleLinkClick = (sectionId: number) => {
     onLinkClick(sectionId, closeSheet);
   };
@@ -37,17 +38,9 @@ export default function Sidebar({ className, onLinkClick, isMobileView = false, 
       )}
       {...props}
     >
-      <nav className="flex flex-col items-start gap-4 relative">
-        {/* Width anchor for the widest link at its widest font weight, only affects width */}
-        <span
-          className="block h-0 overflow-hidden opacity-0 pointer-events-none font-normal"
-          aria-hidden="true"
-          tabIndex={-1}
-        >
-          Experience
-        </span>
-        {isMobileView && (
-          <>
+      {isMobileView ? (
+        <>
+          <div>
             <a
               href="/Yura_Goryakin_CV.pdf"
               download="Yura_Goryakin_CV.pdf"
@@ -56,45 +49,97 @@ export default function Sidebar({ className, onLinkClick, isMobileView = false, 
             >
               Download CV
             </a>
-            <Separator className="my-2 bg-border" />
-          </>
-        )}
-        {sections.map((section) => {
-          return (
-            <a
-              key={section.id}
-              href={`#section-${section.id}`}
-              onClick={(e) => {
-                e.preventDefault();
-                handleLinkClick(section.id);
-              }}
-              className={cn(
-                'rounded-md transition-all duration-200 cursor-pointer hover:font-medium hover:text-primary',
-                activeSection === section.id
-                  ? 'font-medium text-primary'
-                  : 'font-normal text-muted-foreground'
-              )}
+          </div>
+
+          <nav className="flex-grow flex flex-col justify-center items-start gap-4 relative">
+            {sections.map((section) => (
+              <a
+                key={section.id}
+                href={`#section-${section.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(section.id);
+                }}
+                className={cn(
+                  'rounded-md transition-all duration-200 cursor-pointer hover:font-medium hover:text-primary',
+                  activeSection === section.id
+                    ? 'font-medium text-primary'
+                    : 'font-normal text-muted-foreground'
+                )}
+              >
+                {section.name}
+              </a>
+            ))}
+            {activeSection === 7 && (
+              <a
+                href="#section-7"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(7);
+                }}
+                className="font-normal text-primary cursor-pointer"
+              >
+                Credits
+              </a>
+            )}
+          </nav>
+
+          <div className="mb-4">
+            <ThemeToggle />
+          </div>
+        </>
+      ) : (
+        <>
+          <nav className="flex flex-col items-start gap-4 relative">
+            <span
+              className="block h-0 overflow-hidden opacity-0 pointer-events-none font-normal"
+              aria-hidden="true"
+              tabIndex={-1}
             >
-              {section.name}
-            </a>
-          );
-        })}
-        {activeSection === 7 && (
-          <a
-            href="#section-7"
-            onClick={(e) => {
-              e.preventDefault();
-              handleLinkClick(7);
-            }}
-            className="font-normal text-primary cursor-pointer"
-          >
-            Credits
-          </a>
-        )}
-      </nav>
-      <div className="mt-auto">
-        <ThemeToggle />
-      </div>
+              Experience
+            </span>
+            {sections.map((section) => (
+              <a
+                key={section.id}
+                href={`#section-${section.id}`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleLinkClick(section.id);
+                }}
+                className={cn(
+                  'rounded-md transition-all duration-200 cursor-pointer hover:font-medium hover:text-primary',
+                  activeSection === section.id
+                    ? 'font-medium text-primary'
+                    : 'font-normal text-muted-foreground'
+                )}
+              >
+                {section.name}
+              </a>
+            ))}
+            <AnimatePresence>
+              {activeSection === 7 && (
+                <motion.a
+                  href="#section-7"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleLinkClick(7);
+                  }}
+                  className="font-normal text-primary cursor-pointer"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 10 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  Credits
+                </motion.a>
+              )}
+            </AnimatePresence>
+          </nav>
+          <div className="mt-auto">
+            <ThemeToggle />
+          </div>
+        </>
+      )}
     </aside>
   );
 }

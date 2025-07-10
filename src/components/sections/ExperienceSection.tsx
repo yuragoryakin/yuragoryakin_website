@@ -1,24 +1,40 @@
 import type { FC } from 'react';
 import { cn } from '@/lib/utils';
+import { SectionData } from '@/types';
 
 type ExperienceSectionProps = {
-  heading?: {
-    brand: string;
-    date: string;
-    title: string;
-  };
-  content: string[][];
   isMobile: boolean;
   isTallScreen: boolean;
 };
 
+const experienceData: Pick<SectionData, 'heading' | 'content'> = {
+  heading: {
+    brand: 'Dodo Brands',
+    date: 'April 2023 – March 2025',
+    title: 'Product Designer (Previously UX/UI)',
+  },
+  content: [
+    [
+      'Designed and launched the UX/UI for a highly complex internal software across web and mobile, emphasizing usability, accessibility, and visual coherence for 1,000+ users.',
+      'Led product research initiatives, utilizing competitive analysis, user interviews, surveys, heuristic evaluations, and user journey testing to identify critical user pain points and deliver user-backed insights to UX.',
+      'Built and maintained a design system in Figma, leveraging Auto Layout, Dev Mode, and component libraries with HTML/CSS previews to streamline engineer hand-off.',
+      'Established essential UX architecture for data-heavy interactions, including role-based permissions and entity relationships.',
+    ],
+    [
+      'Translated complex business logic into functional design specifications through close partnership with developers and stakeholders.',
+      'Expanded responsibilities beyond core design by leading competitor analysis, feature prioritization, stakeholder workshops, and requirements gathering, synchronizing business objectives with technical execution.',
+      'Contributed to product strategy and feature prioritization, directly influencing the development roadmap and optimizing resource allocation within a lean team setting.',
+      'Revamped operational workflows, resulting in significant improvements in company-wide efficiency.',
+    ],
+  ],
+};
+
 const ExperienceSection: FC<ExperienceSectionProps> = ({
-  heading,
-  content,
   isMobile,
   isTallScreen,
 }) => {
-  const [col1, col2] = content;
+  const { heading, content } = experienceData;
+  const [col1, col2] = content as string[][];
   const isSpecialTallLayout = isTallScreen && !isMobile;
 
   if (isMobile) {

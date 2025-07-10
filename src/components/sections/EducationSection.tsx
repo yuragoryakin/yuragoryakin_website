@@ -1,22 +1,28 @@
 import type { FC } from 'react';
 import { cn } from '@/lib/utils';
-
-type EducationItem = {
-  institute: string;
-  degree: string;
-};
+import { EducationItem } from '@/types';
 
 type EducationSectionProps = {
-  content: EducationItem[];
   isMobile: boolean;
   isTallScreen: boolean;
 };
 
+const educationData: EducationItem[] = [
+  {
+    institute: 'Moscow Architectural Institute',
+    degree: 'Architecture',
+  },
+  {
+    institute: 'University of Padova',
+    degree: 'Psychology',
+  },
+];
+
 const EducationSection: FC<EducationSectionProps> = ({
-  content,
   isMobile,
   isTallScreen,
 }) => {
+  const content = educationData;
   const isSpecialTallLayout = isTallScreen && !isMobile;
 
   if (isMobile) {

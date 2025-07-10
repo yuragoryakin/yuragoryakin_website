@@ -2,11 +2,15 @@ import type { FC } from 'react';
 import { cn } from '@/lib/utils';
 
 type ContactSectionProps = {
-  content: string[][];
   isMobile: boolean;
 };
 
-const ContactSection: FC<ContactSectionProps> = ({ content, isMobile }) => {
+const contactData: string[][] = [
+  ['yuragoryakin.com', 'yu.goryakin@gmail.com', '+995557317256'],
+];
+
+const ContactSection: FC<ContactSectionProps> = ({ isMobile }) => {
+  const content = contactData;
   const items = content[0];
   return (
     <>

@@ -2,16 +2,24 @@ import type { FC } from 'react';
 import { cn } from '@/lib/utils';
 
 type SkillsSectionProps = {
-  content: string[][];
   isMobile: boolean;
   isTallScreen: boolean;
 };
 
+const skillsData: string[][] = [
+  [
+    'User research\nUser flows\nWireframing\nPrototyping\nResponsive design\nDesign systems\nDesign thinking\nAccessibility\nLow/no-code tools\nGraphic design\nTypography\nBusiness Analysis\nRequirements Gathering\nEnglish fluent\nRussian native',
+  ],
+  [
+    'Figma\nUXPin\nWebflow\nFramer\nAdobe Suite\nAI Copilots\nMaze\nProtoPie\nOrigami Live\nAtlassian suite\nSlack\nHTML/CSS\nJavaScript\nStorybook',
+  ],
+];
+
 const SkillsSection: FC<SkillsSectionProps> = ({
-  content,
   isMobile,
   isTallScreen,
 }) => {
+  const content = skillsData;
   const skillsCols = content.map((col) => col.join('\n'));
 
   if (isMobile) {

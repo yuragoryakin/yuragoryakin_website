@@ -1,29 +1,30 @@
 /*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[14].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src\\app\\layout.tsx","import":"Rethink_Sans","arguments":[{"subsets":["latin"],"display":"swap","variable":"--font-rethink-sans"}],"variableName":"rethinkSans"} ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[2].use[1]!./node_modules/next/dist/build/webpack/loaders/next-font-loader/index.js??ruleSet[1].rules[13].oneOf[2].use[2]!./node_modules/next/font/google/target.css?{"path":"src\\app\\layout.tsx","import":"Rethink_Sans","arguments":[{"subsets":["latin"],"display":"swap","variable":"--font-rethink-sans"}],"variableName":"rethinkSans"} ***!
   \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /* latin-ext */
 @font-face {
-  font-family: '__Rethink_Sans_10dfd7';
+  font-family: 'Rethink Sans';
   font-style: normal;
   font-weight: 400 800;
   font-display: swap;
-  src: url(/_next/static/media/6e7970bdb4a01572.woff2) format('woff2');
+  src: url(/_next/static/media/6e7970bdb4a01572-s.woff2) format('woff2');
   unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
 }
 /* latin */
 @font-face {
-  font-family: '__Rethink_Sans_10dfd7';
+  font-family: 'Rethink Sans';
   font-style: normal;
   font-weight: 400 800;
   font-display: swap;
-  src: url(/_next/static/media/e5a4b6cc4d9f838f.p.woff2) format('woff2');
+  src: url(/_next/static/media/e5a4b6cc4d9f838f-s.p.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}.__className_10dfd7 {font-family: '__Rethink_Sans_10dfd7';font-style: normal
-}.__variable_10dfd7 {--font-rethink-sans: '__Rethink_Sans_10dfd7'
+}@font-face {font-family: 'Rethink Sans Fallback';src: local("Arial");ascent-override: 94.70%;descent-override: 29.59%;line-gap-override: 0.00%;size-adjust: 104.76%
+}.__className_b83e2f {font-family: 'Rethink Sans', 'Rethink Sans Fallback';font-style: normal
+}.__variable_b83e2f {--font-rethink-sans: 'Rethink Sans', 'Rethink Sans Fallback'
 }
 
 /*!*****************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[14].oneOf[12].use[3]!./src/app/globals.css ***!
+  !*** css ./node_modules/next/dist/build/webpack/loaders/css-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[2]!./node_modules/next/dist/build/webpack/loaders/postcss-loader/src/index.js??ruleSet[1].rules[13].oneOf[10].use[3]!./src/app/globals.css ***!
   \*****************************************************************************************************************************************************************************************************************************************************************/
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
@@ -613,9 +614,6 @@ video {
 .pointer-events-auto {
   pointer-events: auto;
 }
-.static {
-  position: static;
-}
 .fixed {
   position: fixed;
 }
@@ -817,6 +815,9 @@ video {
 .flex-grow {
   flex-grow: 1;
 }
+.origin-top {
+  transform-origin: top;
+}
 .cursor-pointer {
   cursor: pointer;
 }
@@ -909,9 +910,6 @@ video {
 .border-2 {
   border-width: 2px;
 }
-.border-b {
-  border-bottom-width: 1px;
-}
 .border-l {
   border-left-width: 1px;
 }
@@ -935,9 +933,6 @@ video {
 }
 .bg-background {
   background-color: hsl(var(--background));
-}
-.bg-black\/80 {
-  background-color: rgb(0 0 0 / 0.8);
 }
 .bg-border {
   background-color: hsl(var(--border));
@@ -1119,6 +1114,9 @@ video {
 .ring-offset-background {
   --tw-ring-offset-color: hsl(var(--background));
 }
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .transition {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
@@ -1149,9 +1147,6 @@ video {
 .duration-200 {
   transition-duration: 200ms;
 }
-.ease-in-out {
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
 @keyframes enter {
 
   from {
@@ -1171,9 +1166,6 @@ video {
 }
 .duration-200 {
   animation-duration: 200ms;
-}
-.ease-in-out {
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hover\:bg-accent:hover {
@@ -1376,14 +1368,6 @@ video {
   transition-property: none;
 }
 
-.data-\[state\=closed\]\:duration-300[data-state="closed"] {
-  transition-duration: 300ms;
-}
-
-.data-\[state\=open\]\:duration-500[data-state="open"] {
-  transition-duration: 500ms;
-}
-
 .data-\[state\=open\]\:animate-in[data-state="open"] {
   animation-name: enter;
   animation-duration: 150ms;
@@ -1414,64 +1398,16 @@ video {
   --tw-exit-translate-y: initial;
 }
 
-.data-\[state\=closed\]\:fade-out-0[data-state="closed"] {
-  --tw-exit-opacity: 0;
-}
-
 .data-\[state\=closed\]\:fade-out-80[data-state="closed"] {
   --tw-exit-opacity: 0.8;
-}
-
-.data-\[state\=open\]\:fade-in-0[data-state="open"] {
-  --tw-enter-opacity: 0;
-}
-
-.data-\[state\=closed\]\:slide-out-to-bottom[data-state="closed"] {
-  --tw-exit-translate-y: 100%;
-}
-
-.data-\[state\=closed\]\:slide-out-to-left[data-state="closed"] {
-  --tw-exit-translate-x: -100%;
-}
-
-.data-\[state\=closed\]\:slide-out-to-right[data-state="closed"] {
-  --tw-exit-translate-x: 100%;
 }
 
 .data-\[state\=closed\]\:slide-out-to-right-full[data-state="closed"] {
   --tw-exit-translate-x: 100%;
 }
 
-.data-\[state\=closed\]\:slide-out-to-top[data-state="closed"] {
-  --tw-exit-translate-y: -100%;
-}
-
-.data-\[state\=open\]\:slide-in-from-bottom[data-state="open"] {
-  --tw-enter-translate-y: 100%;
-}
-
-.data-\[state\=open\]\:slide-in-from-left[data-state="open"] {
-  --tw-enter-translate-x: -100%;
-}
-
-.data-\[state\=open\]\:slide-in-from-right[data-state="open"] {
-  --tw-enter-translate-x: 100%;
-}
-
-.data-\[state\=open\]\:slide-in-from-top[data-state="open"] {
-  --tw-enter-translate-y: -100%;
-}
-
 .data-\[state\=open\]\:slide-in-from-top-full[data-state="open"] {
   --tw-enter-translate-y: -100%;
-}
-
-.data-\[state\=closed\]\:duration-300[data-state="closed"] {
-  animation-duration: 300ms;
-}
-
-.data-\[state\=open\]\:duration-500[data-state="open"] {
-  animation-duration: 500ms;
 }
 
 @media (min-width: 640px) {
@@ -1488,26 +1424,8 @@ video {
     top: auto;
   }
 
-  .sm\:max-w-sm {
-    max-width: 24rem;
-  }
-
-  .sm\:flex-row {
-    flex-direction: row;
-  }
-
   .sm\:flex-col {
     flex-direction: column;
-  }
-
-  .sm\:justify-end {
-    justify-content: flex-end;
-  }
-
-  .sm\:space-x-2 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(0.5rem * var(--tw-space-x-reverse));
-    margin-left: calc(0.5rem * calc(1 - var(--tw-space-x-reverse)));
   }
 
   .sm\:text-left {
