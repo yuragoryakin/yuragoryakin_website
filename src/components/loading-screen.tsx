@@ -82,7 +82,7 @@ export default function LoadingScreen({ onAnimationComplete, onFadeOutStart }: {
     }
   }, [fadeOut, onAnimationComplete]);
 
-  const containerStyle = {
+  const containerStyle: React.CSSProperties = {
     width: 'clamp(180px, 60vw, 300px)',
     aspectRatio: `${IMG_WIDTH} / ${IMG_HEIGHT}`,
     position: 'relative'

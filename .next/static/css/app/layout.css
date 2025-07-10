@@ -652,9 +652,6 @@ video {
 .right-2 {
   right: 0.5rem;
 }
-.right-4 {
-  right: 1rem;
-}
 .top-0 {
   top: 0px;
 }
@@ -664,9 +661,6 @@ video {
 .top-2 {
   top: 0.5rem;
 }
-.top-4 {
-  top: 1rem;
-}
 .z-10 {
   z-index: 10;
 }
@@ -675,10 +669,6 @@ video {
 }
 .z-\[100\] {
   z-index: 100;
-}
-.my-2 {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
 }
 .mb-4 {
   margin-bottom: 1rem;
@@ -901,9 +891,6 @@ video {
 .rounded-md {
   border-radius: calc(var(--radius) - 2px);
 }
-.rounded-sm {
-  border-radius: calc(var(--radius) - 4px);
-}
 .border {
   border-width: 1px;
 }
@@ -1092,9 +1079,6 @@ video {
 .opacity-100 {
   opacity: 1;
 }
-.opacity-70 {
-  opacity: 0.7;
-}
 .opacity-90 {
   opacity: 0.9;
 }
@@ -1210,10 +1194,6 @@ video {
 
 .hover\:underline:hover {
   text-decoration-line: underline;
-}
-
-.hover\:opacity-100:hover {
-  opacity: 1;
 }
 
 .focus\:opacity-100:focus {
@@ -1354,10 +1334,6 @@ video {
 
 .data-\[state\=checked\]\:bg-primary[data-state="checked"] {
   background-color: hsl(var(--primary));
-}
-
-.data-\[state\=open\]\:bg-secondary[data-state="open"] {
-  background-color: hsl(var(--secondary));
 }
 
 .data-\[state\=unchecked\]\:bg-input[data-state="unchecked"] {
