@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 
 const IMG_SRC = '/yura_illustration.png';
 const IMG_WIDTH = 2599; // original PNG width
