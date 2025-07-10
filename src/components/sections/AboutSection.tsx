@@ -3,14 +3,6 @@ import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import type { SectionData } from '@/types';
 
-type ImageItem = {
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-  'data-ai-hint': string;
-};
-
 type AboutSectionProps = {
   isMobile: boolean;
   isTallScreen: boolean;
