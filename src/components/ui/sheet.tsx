@@ -3,8 +3,7 @@
 import * as React from "react"
 import * as SheetPrimitive from "@radix-ui/react-dialog"
 import { cva, type VariantProps } from "class-variance-authority"
-import { X } from "lucide-react"
-import { motion, AnimatePresence } from "framer-motion"
+import { motion, easeIn, easeOut } from "framer-motion"
 
 import { cn } from "@/lib/utils"
 
@@ -46,44 +45,44 @@ const SheetContent = React.forwardRef<
       initial: { scaleY: 0 },
       animate: {
         scaleY: 1,
-        transition: { duration: 0.4, ease: [0.22, 1, 0.36, 1] },
+        transition: { duration: 0.4, ease: easeOut },
       },
       exit: {
         scaleY: 0,
-        transition: { duration: 0.3, ease: 'easeIn' },
+        transition: { duration: 0.3, ease: easeIn },
       },
     },
     right: {
       initial: { x: "100%" },
       animate: {
         x: "0%",
-        transition: { duration: 0.4, ease: [0.08, 0.9, 0.3, 1] },
+        transition: { duration: 0.4, ease: easeOut },
       },
       exit: {
         x: "100%",
-        transition: { duration: 0.3, ease: 'easeIn' },
+        transition: { duration: 0.3, ease: easeIn },
       },
     },
     bottom: {
       initial: { y: "100%" },
       animate: {
         y: "0%",
-        transition: { duration: 0.4, ease: [0.08, 0.9, 0.3, 1] },
+        transition: { duration: 0.4, ease: easeOut },
       },
       exit: {
         y: "100%",
-        transition: { duration: 0.3, ease: 'easeIn' },
+        transition: { duration: 0.3, ease: easeIn },
       },
     },
     left: {
       initial: { x: "-100%" },
       animate: {
         x: "0%",
-        transition: { duration: 0.4, ease: [0.08, 0.9, 0.3, 1] },
+        transition: { duration: 0.4, ease: easeOut },
       },
       exit: {
         x: "-100%",
-        transition: { duration: 0.3, ease: 'easeIn' },
+        transition: { duration: 0.3, ease: easeIn },
       },
     },
   }
@@ -99,7 +98,7 @@ const SheetContent = React.forwardRef<
         initial="initial"
         animate="animate"
         exit="exit"
-        variants={animationVariants[side]}
+        variants={animationVariants[side as keyof typeof animationVariants]}
         className="origin-top"
       >
         {children}

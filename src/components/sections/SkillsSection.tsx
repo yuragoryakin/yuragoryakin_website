@@ -1,9 +1,7 @@
 import type { FC } from 'react';
-import { cn } from '@/lib/utils';
 
 type SkillsSectionProps = {
   isMobile: boolean;
-  isTallScreen: boolean;
 };
 
 const skillsData: string[][] = [
@@ -17,7 +15,6 @@ const skillsData: string[][] = [
 
 const SkillsSection: FC<SkillsSectionProps> = ({
   isMobile,
-  isTallScreen,
 }) => {
   const content = skillsData;
   const skillsCols = content.map((col) => col.join('\n'));
