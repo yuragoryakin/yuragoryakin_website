@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { cn } from '@/lib/utils';
-import { SectionData } from '@/types';
+import type { SectionData } from '@/types';
 
 type ExperienceSectionProps = {
   isMobile: boolean;

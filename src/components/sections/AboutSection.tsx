@@ -1,7 +1,7 @@
 import type { FC } from 'react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import { SectionData } from '@/types';
+import type { SectionData } from '@/types';
 
 type ImageItem = {
   src: string;

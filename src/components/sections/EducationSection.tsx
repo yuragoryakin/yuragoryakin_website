@@ -1,6 +1,6 @@
 import type { FC } from 'react';
 import { cn } from '@/lib/utils';
-import { EducationItem } from '@/types';
+import type { EducationItem } from '@/types';
 
 type EducationSectionProps = {
   isMobile: boolean;
