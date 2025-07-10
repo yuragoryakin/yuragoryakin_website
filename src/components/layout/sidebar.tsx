@@ -2,7 +2,6 @@
 
 import type { ComponentProps } from 'react';
 import { cn } from '@/lib/utils';
-import { Separator } from '../ui/separator';
 import { ThemeToggle } from '../theme-toggle';
 import { motion, AnimatePresence } from 'framer-motion';
 
