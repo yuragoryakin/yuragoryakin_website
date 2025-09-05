@@ -1,0 +1,7 @@
+{
+  "name": "yuragoryakin-website",
+  "build": {
+    "command": "npm run build",
+    "output": ".next"
+  }
+}

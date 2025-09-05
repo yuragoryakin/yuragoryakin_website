@@ -1,5 +1,9 @@
 {
   "version": 1,
   "include": ["/*"],
-  "exclude": []
+  "exclude": [
+    "/_next/static/chunks/*",
+    "/_next/static/css/*",
+    "/_next/static/media/*"
+  ]
 }
