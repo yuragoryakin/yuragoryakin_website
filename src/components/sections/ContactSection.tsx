@@ -23,7 +23,7 @@ const ContactSection: FC<ContactSectionProps> = ({ isMobile }) => {
       >
         <div className="space-y-4">
           {items.map((item, i) => (
-            <p key={i} className="font-normal text-primary">
+            <p key={i} className={cn("font-normal text-primary", isMobile && "text-[20px]")}>
               {item}
             </p>
           ))}

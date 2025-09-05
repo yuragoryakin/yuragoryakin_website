@@ -60,10 +60,10 @@ export default function Sidebar({
                   handleLinkClick(section.id);
                 }}
                 className={cn(
-                  'rounded-md transition-all duration-200 cursor-pointer hover:font-medium hover:text-primary',
+                  'text-[28px] font-bold rounded-md transition-all duration-200 cursor-pointer hover:text-primary',
                   activeSection === section.id
-                    ? 'font-medium text-primary'
-                    : 'font-normal text-muted-foreground'
+                    ? 'text-primary'
+                    : 'text-muted-foreground'
                 )}
               >
                 {section.name}
@@ -76,7 +76,7 @@ export default function Sidebar({
                   e.preventDefault();
                   handleLinkClick(7);
                 }}
-                className="font-normal text-primary cursor-pointer"
+                className="text-[28px] font-bold text-primary cursor-pointer"
               >
                 Credits
               </a>

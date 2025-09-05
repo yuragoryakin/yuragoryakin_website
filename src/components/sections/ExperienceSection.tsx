@@ -9,9 +9,9 @@ type ExperienceSectionProps = {
 
 const experienceData: Pick<SectionData, 'heading' | 'content'> = {
   heading: {
-    brand: 'Dodo Brands',
+    brand: 'B2B SaaS for Dodo Brands',
     date: 'April 2023 – March 2025',
-    title: 'Product Designer (Previously UX/UI)',
+    title: 'Product Designer',
   },
   content: [
     [
@@ -42,20 +42,37 @@ const ExperienceSection: FC<ExperienceSectionProps> = ({
       <div className="w-full">
         {heading && (
           <div className="mb-4">
-            <p>
-              <span className="font-medium text-primary">{heading.brand}</span>
-              <span className="ml-4 font-normal text-secondary-foreground">
+            <p className="font-medium text-secondary-foreground text-[20px]">
+              {heading.title}
+            </p>
+            <p className="text-[20px]">
+              <span className="font-normal text-secondary-foreground">
                 {heading.date}
               </span>
-            </p>
-            <p className="font-medium text-secondary-foreground">
-              {heading.title}
+              <span className="ml-4 font-medium text-primary">{heading.brand}</span>
             </p>
           </div>
         )}
+        {/* Screenshots row - mobile version (2 rows, 1 column) */}
+        <div className="flex flex-col gap-4 mb-6">
+          <div className="w-full">
+            <img 
+              src="/2025-09-05 15.16.15.jpg" 
+              alt="Experience screenshot 1" 
+              className="w-full rounded-lg"
+            />
+          </div>
+          <div className="w-full">
+            <img 
+              src="/2025-09-05 15.16.36.jpg" 
+              alt="Experience screenshot 2" 
+              className="w-full rounded-lg"
+            />
+          </div>
+        </div>
         <div className="space-y-4">
           {[...col1, ...col2].map((p, i) => (
-            <p key={i} className="font-normal text-primary">
+            <p key={i} className="font-normal text-primary text-[20px]">
               {p}
             </p>
           ))}
@@ -71,17 +88,34 @@ const ExperienceSection: FC<ExperienceSectionProps> = ({
     <div className={cn('w-full')}>
       {heading && (
         <div className="mb-4">
-          <p>
-            <span className="font-medium text-primary">{heading.brand}</span>
-            <span className="ml-4 font-normal text-secondary-foreground">
-              {heading.date}
-            </span>
-          </p>
           <p className="font-medium text-secondary-foreground">
             {heading.title}
           </p>
+          <p>
+            <span className="font-normal text-secondary-foreground">
+              {heading.date}
+            </span>
+            <span className="ml-4 font-medium text-primary">{heading.brand}</span>
+          </p>
         </div>
       )}
+      {/* Screenshots row - desktop version (1 row, 2 columns) */}
+      <div className="flex flex-row gap-4 mb-6">
+        <div className="flex-1">
+          <img 
+            src="/2025-09-05 15.16.15.jpg" 
+            alt="Experience screenshot 1" 
+            className="w-full rounded-lg"
+          />
+        </div>
+        <div className="flex-1">
+          <img 
+            src="/2025-09-05 15.16.36.jpg" 
+            alt="Experience screenshot 2" 
+            className="w-full rounded-lg"
+          />
+        </div>
+      </div>
       <div className="flex flex-row gap-[clamp(4rem,calc(0.0078125vw-4rem),12rem)]">
         <div className="flex-1 space-y-4">
           {firstColumnContent.map((p, i) => (

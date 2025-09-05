@@ -36,11 +36,11 @@ const sections: Omit<SectionData, 'content' | 'images' | 'heading' | 'type'>[] =
     },
     {
       id: 3,
-      name: 'Education',
+      name: 'Skills',
     },
     {
       id: 4,
-      name: 'Skills',
+      name: 'Education',
     },
     {
       id: 5,
@@ -59,8 +59,8 @@ const sections: Omit<SectionData, 'content' | 'images' | 'heading' | 'type'>[] =
 const SectionComponents: { [key: number]: React.FC<any> } = {
   1: IntroSection,
   2: ExperienceSection,
-  3: EducationSection,
-  4: SkillsSection,
+  3: SkillsSection,
+  4: EducationSection,
   5: AboutSection,
   6: ContactSection,
   7: FooterSection,
@@ -298,7 +298,7 @@ export default function PageClient() {
                   )}
                 >
                   {isMobile && id !== 1 && name !== 'Credits' && (
-                    <h2 className="text-heading font-bold mb-8 lg:hidden">
+                    <h2 className="text-[28px] font-bold mb-2 lg:hidden">
                       {name}
                     </h2>
                   )}

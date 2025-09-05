@@ -21,18 +21,18 @@ const aboutData: Pick<SectionData, 'content' | 'images'> = {
   ],
   images: [
     {
-      src: '/about-1.JPG',
-      alt: 'A person standing in a grassy field holding white flowers, with a dog nearby.',
-      width: 400,
-      height: 400,
-      'data-ai-hint': 'person field',
-    },
-    {
       src: '/about-2.jpg',
       alt: 'A person sitting at a desk with a computer, headphones, and plants.',
       width: 400,
       height: 400,
       'data-ai-hint': 'person desk',
+    },
+    {
+      src: '/about-1.JPG',
+      alt: 'A person standing in a grassy field holding white flowers, with a dog nearby.',
+      width: 400,
+      height: 400,
+      'data-ai-hint': 'person field',
     },
   ],
 };
@@ -49,11 +49,19 @@ const AboutSection: FC<AboutSectionProps> = ({
     <div
       className={cn(
         !isSpecialTallLayout && 'mt-8',
-        'flex flex-row items-start gap-4'
+        isMobile 
+          ? 'flex flex-col items-center gap-4'  // Mobile: 2 rows, 1 column
+          : 'flex flex-row items-start gap-4'   // Desktop: 1 row, 2 columns
       )}
     >
       {images.map(({ src, alt, 'data-ai-hint': dataAiHint }, imgIndex) => (
-        <div key={imgIndex} className="relative aspect-square w-1/2">
+        <div 
+          key={imgIndex} 
+          className={cn(
+            "relative aspect-square",
+            isMobile ? "w-full" : "w-1/2"
+          )}
+        >
           <Image
             src={src}
             alt={alt}
@@ -92,7 +100,7 @@ const AboutSection: FC<AboutSectionProps> = ({
     >
       <div className={cn('space-y-4', !isMobile && 'flex-1')}>
         {col1.map((p, i) => (
-          <p key={i} className="font-normal text-primary">
+          <p key={i} className={cn("font-normal text-primary", isMobile && "text-[20px]")}>
             {p}
           </p>
         ))}
@@ -100,7 +108,7 @@ const AboutSection: FC<AboutSectionProps> = ({
       <div className={cn('flex flex-col', !isMobile && 'flex-1')}>
         <div className="space-y-4">
           {col2.map((p, i) => (
-            <p key={i} className="font-normal text-primary">
+            <p key={i} className={cn("font-normal text-primary", isMobile && "text-[20px]")}>
               {p}
             </p>
           ))}

@@ -6,7 +6,7 @@ type IntroSectionProps = {
 };
 
 const content =
-  "Hi, I'm Yura — a Product Designer passionate about transforming complex challenges into good-looking and easy-to-use products.";
+  "Hi, I'm Yura a Designer passionate about transforming complex challenges into good-looking and easy-to-use design.";
 
 const IntroSection: FC<IntroSectionProps> = ({ isMobile }) => {
   return (

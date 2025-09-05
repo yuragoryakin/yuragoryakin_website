@@ -30,8 +30,8 @@ const EducationSection: FC<EducationSectionProps> = ({
         <div className="space-y-8">
           {content.map((item, i) => (
             <div key={i}>
-              <p className="font-normal text-primary">{item.institute}</p>
-              <p className="font-normal text-secondary-foreground">
+              <p className="font-normal text-primary text-[20px]">{item.institute}</p>
+              <p className="font-normal text-secondary-foreground text-[20px]">
                 {item.degree}
               </p>
             </div>
