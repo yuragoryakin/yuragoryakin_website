@@ -1,1 +1,1 @@
-self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/yura/Documents/website_v2/yuragoryakin_website/src/app/layout\":[\"static/media/0b9604ccabf0c9c7-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
+self.__NEXT_FONT_MANIFEST='{"pages":{},"app":{"/Users/yura/Documents/website_v2/yuragoryakin_website/src/app/layout":["static/media/0b9604ccabf0c9c7-s.p.woff2"]},"appUsingSizeAdjust":true,"pagesUsingSizeAdjust":false}';
